@@ -1,0 +1,91 @@
+:root {
+  --hot-pink: #FF4F95;
+  --maroon: #80123E;
+  --bg-dark: #0d0d0e;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Animations */
+@keyframes click-bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+
+.clickable-bounce {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  display: inline-block; /* Essential for transform to work on links */
+}
+
+.clickable-bounce:active {
+  animation: click-bounce 0.2s forwards;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Base Mobile-First Styles */
+.app-container { background: var(--bg-dark); min-height: 100vh; overflow-x: hidden; }
+
+.nav-blur { 
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  z-index: 1000; 
+  backdrop-filter: blur(20px); 
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border); 
+  background: rgba(13, 13, 14, 0.7); 
+}
+
+.nav-content { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 1rem; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+/* Responsive Grid for Footer */
+.big-footer { background: #050505; padding: 5rem 1.5rem; border-top: 1px solid var(--glass-border); margin-top: 5rem; }
+
+.footer-grid { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  grid-template-columns: 1fr; /* Mobile first: stack everything */
+  gap: 3rem; 
+}
+
+@media (min-width: 768px) {
+  .nav-content { padding: 1rem 2rem; }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+  .big-footer { padding: 8rem 2rem 4rem; margin-top: 10rem; }
+}
+
+.cta-pill { 
+  background: var(--hot-pink); 
+  color: white; 
+  padding: 0.6rem 1.2rem; 
+  border-radius: 50px; 
+  border: none; 
+  font-weight: 700; 
+  font-size: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .cta-pill { padding: 0.8rem 1.8rem; font-size: 1rem; }
+}
