@@ -3,8 +3,8 @@ require_once('vendor/autoload.php');
 
 use GuzzleHttp\Client;
 
-$API_KEY = 'd17d75a7437f62d4ce3e80b31a0e575eb34745288f699b7ebe9dee98d22305e5';
-$ACCOUNT_ID = '0e9fb03a-637d-4e61-beeb-253ae5c9b366'; // 36-character account UUID
+$API_KEY = 'd17d7537f62d4ce3e80b31a0e575eb34745288f699b7ebe9dee98d22305e5';
+'; // 36-character account UUID
 $PHONE = '0960883940'; // test recipient phone
 $OPERATOR = 'mtn'; // airtel, mtn, zamtel (Zambia)
 $COUNTRY = 'zm'; // zm = Zambia, mw = Malawi
@@ -46,3 +46,4 @@ try {
     echo $e->getMessage();
     echo "</pre>";
 }
+
