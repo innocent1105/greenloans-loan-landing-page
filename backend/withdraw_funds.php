@@ -7,8 +7,8 @@ use GuzzleHttp\Client;
 
 $input = json_decode(file_get_contents("php://input"), true);
 
-$API_KEY = 'd17d75a7437f62d4ce3e80b31a0e575eb34745288f699b7ebe9dee98d22305e5';
-$ACCOUNT_ID = '0e9fb03a-637d-4e61-beeb-253ae5c9b366'; 
+$API_KEY = "b34745288f699b7ebe9dee98d22305e5';
+$ACCOUNT_ID = ''; 
 $AMOUNT     = (float)($input['amount'] ?? 0);
 $PHONE      = $input['mobile_number'] ?? '';
 $p_id   = $input['user_token'] ?? ''; 
@@ -171,4 +171,5 @@ try {
         'success' => false,
         'message' => 'Could not initiate collection'
     ]);
+
 }
